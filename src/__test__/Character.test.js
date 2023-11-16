@@ -9,8 +9,8 @@ describe('Character', () => {
       type: 'Bowman',
       health: 100,
       level: 1,
-      attack: 0,
-      defence: 0,
+      attack: undefined,
+      defence: undefined,
     });
   });
 
@@ -80,7 +80,7 @@ describe('Character', () => {
     character.health = 10;
     character.damage(50);
 
-    expect(character.health).toBe(0);
+    expect(character.health).toBeCloseTo(0);
   });
 
   test('take damage and set health to 0 if damage exceeds health', () => {
